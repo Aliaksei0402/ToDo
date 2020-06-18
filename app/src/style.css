@@ -1,0 +1,80 @@
+body {
+    background-color: #caced7;
+    background-image: url(../img/sky.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.main-section {
+    width: 50%;
+    margin: auto;
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.change-pencil {
+    width: 30px;
+    cursor: pointer;
+}
+
+.add-note {}
+
+.add-note-button {
+    width: 30px;
+    cursor: pointer;
+}
+
+.notes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.note {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+    margin: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+#prompt-form {
+    display: inline-block;
+    padding: 5px 5px 5px 5px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: white;
+    vertical-align: middle;
+}
+
+.dialog-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.dialog-window:before {
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+}
