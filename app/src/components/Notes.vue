@@ -1,10 +1,9 @@
 <template>
   <div class="notes">
-
     <AddNote v-if="!changing" @addNote="onAddNote" />
 
     <ChangeNote v-if="changing" :changingNote="changingNote" @onChangingNote="onChangingNote" />
-    
+
     <Note
       v-for="(note, index) in notes"
       v-else
@@ -25,29 +24,30 @@
 </template>
 
 <script>
-import ChangeNote from "./ChangeNote.vue";
 import AddNote from "./AddNote.vue";
+import ChangeNote from "./ChangeNote.vue";
 import Note from "./Note.vue";
 import DialogWindow from "./DialogWindow.vue";
 import NotesList from "../NotesList.js";
 
 export default {
   name: 'Notes',
+
   components: {
-    ChangeNote,
     AddNote,
+    ChangeNote,
     DialogWindow,
-    Note
+    Note,
   },
 
   data() {
     return {
-      notes: NotesList,
+      notes: JSON.parse(localStorage.getItem("notes")) || NotesList,
       changing: false,
       changingNote: {},
       changeNote: false,
       index: 0,
-      addNotePage: false
+      addNotePage: false,
     }
   },
 
@@ -67,12 +67,14 @@ export default {
     onChangingNote(note) {
       this.changing = false;
       this.notes[this.index] = note;
+      localStorage.setItem("notes", JSON.stringify(this.notes));
     },
 
     onConfirmChange(index) {
       this.notes.splice(index, 1);
       this.index = 0;
       this.changeNote = false;
+      localStorage.setItem("notes", JSON.stringify(this.notes));
     },
 
     onCancelChange() {
@@ -80,8 +82,9 @@ export default {
     },
 
     onAddNote(note) {
-      this.notes.push({ done: false, name: note[0], todos: [{name: note[1], done: false}]});
+      this.notes.push({ done: false, name: note[0], todos: [{ name: note[1], done: false }] });
       this.addNotePage = false;
+      localStorage.setItem("notes", JSON.stringify(this.notes));
     }
   }
 }

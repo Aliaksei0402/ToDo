@@ -10,10 +10,10 @@
 
 <script>
 export default {
-    name: "DialogWindow",
-    props: {
-        index: Number,
-    }
-
+  name: 'DialogWindow',
+  
+  props: {
+    index: Number,
+  }
 }
 </script>

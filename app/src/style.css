@@ -1,28 +1,54 @@
 body {
-    background-color: #caced7;
-    background-image: url(../img/sky.jpg);
-    background-size: cover;
+    background-color: #cceff0;
     box-sizing: border-box;
 }
 
 .main-section {
     width: 50%;
     margin: auto;
-    background-color: antiquewhite;
+    background-image: url('../img/tetr.jpg');
     padding: 20px;
     border-radius: 5px;
-    text-align: center;
 }
 
-.change-pencil {
+img {
     width: 30px;
     cursor: pointer;
 }
 
-.add-note {}
+.add-note {
+    display: flex;
+    justify-content: space-around;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-name {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.remove-todo {
+    width: 15px;
+    margin: -3px;
+}
 
 .add-note-button {
     width: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.add-new-todo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.add-new-todo-button {
+    width: 25px;
     cursor: pointer;
 }
 
@@ -38,15 +64,42 @@ body {
     padding: 10px;
     width: 40%;
     margin: 20px;
+    background-color: #cceff0;
+}
+
+.change-note {
+    width: 70%;
+}
+
+.edit {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #cceff0;
+}
+
+.edit li {
+    list-style: none;
+}
+
+.edit-buttons {
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
 }
 
 li {
-    list-style-type: none;
+    margin-left: 50px;
 }
 
 ul {
     margin-left: 0;
     padding-left: 0;
+    vertical-align: auto;
+}
+
+input {
+    margin: 13px;
 }
 
 .done {

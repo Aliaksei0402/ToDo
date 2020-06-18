@@ -8,7 +8,7 @@
 import Notes from "./Notes.vue";
 
 export default {
-  name: "MainSection",
+  name: 'MainSection',
   components: {
     Notes,
   },
