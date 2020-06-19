@@ -14,11 +14,11 @@
         @cancelChange="onCancelChange"
       />
 
-      <input type="text" v-model="note.name" />
+      <input type="text" v-model="note.name" class="note-name-input"/>
       <ul>
         <li v-for="(todo, index) in note.todos" :key="index">
           <input type="checkbox" v-model="todo.done" @click="todo.done = !todo.done" />
-          <input type="text" v-model="todo.name" />
+          <input type="text" v-model="todo.name" class="todo-name-change"/>
           <img class="remove-todo" src="../../img/remove.png" @click="removeTodo(index)" />
         </li>
         <li>
@@ -27,7 +27,7 @@
             v-model="checkboxAddedTodo"
             @click="checkboxAddedTodo = !checkboxAddedTodo"
           />
-          <input type="text" v-model="addedTodo" placeholder="Enter New Todo" />
+          <input type="text" v-model="addedTodo" placeholder="Enter New Todo" class="todo-name-change"/>
           <img class="remove-todo" src="../../img/add.png" @click="onAddTodo" />
         </li>
       </ul>

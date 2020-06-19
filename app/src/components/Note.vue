@@ -11,7 +11,7 @@
     </div>
     
     <ul>
-      <li v-for="todo in note.todos" :key="todo.name" :class="{ 'done' : todo.done}">{{todo.name}}</li>
+      <li v-for="todo in note.todos" :key="todo.name" :class="{ 'done' : todo.done}" class="todo-li">{{todo.name}}</li>
     </ul>
   </div>
 </template>
